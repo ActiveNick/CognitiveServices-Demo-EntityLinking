@@ -10,11 +10,14 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*" />
             <RowDefinition Height="70" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <TextBox x:Name="inputBox" Grid.Row="0" TextWrapping="Wrap" Text="Enter a paragraph" Margin="12" AcceptsReturn="True" />
-        <TextBlock x:Name="outputBlock" Grid.Row="1" TextWrapping="Wrap" Text="Result will be here" Margin="12" />
-        <Button x:Name="button" Grid.Row="2" Content="Get Result" Margin="12" Click="button_Click"/>
+        <StackPanel Grid.Row="1" Margin="12" Orientation="Horizontal">
+            <Button x:Name="btnGetResult" Content="Get Result" Width="100" Click="btnGetResult_Click" Margin="0, 0, 12, 0" />
+            <Button x:Name="btnClear" Content="Clear Text" Width="100" Click="btnClear_Click" />
+        </StackPanel>
+        <TextBlock x:Name="outputBlock" Grid.Row="2" TextWrapping="Wrap" Text="Result will be here" Margin="12" />
     </Grid>
 </Page>
